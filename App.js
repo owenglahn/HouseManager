@@ -1,25 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, SafeAreaView, Button, Alert } from "react-native";
-// import { NavigationContainer } from "@react-navigation/native";
-// import { createStackNavigator } from "@react-navigation/stack";
+import React, { Component } from "react";
+import {
+  StyleSheet,
+  SafeAreaView,
+  Button,
+  Alert,
+  TextInput,
+  Text,
+} from "react-native";
+import Login from "./components/auth/Login";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles}>
-      <Button
-        title="Click Me"
-        onPress={() => {
-          Alert.alert("Clicked", "You clicked on the button 😱", [
-            {
-              text: "Cancel",
-              style: "cancel",
-              onPress: console.log("Cancel Pressed"),
-            },
-            { text: "OK", onPress: console.log("OK pressed") },
-          ]);
-        }}
-      />
+    <SafeAreaView style={styles.container}>
+      <Login style={styles.login} />
     </SafeAreaView>
   );
 }
@@ -27,12 +21,30 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
   },
   image: {
     width: 100,
     height: 100,
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+  },
+  login: {
+    height: 500,
+    margin: 12,
+    justifyContent: "center",
+    alignItems: "center",
+    alignContent: "center",
+  },
+  mainContainer: {
+    marginTop: 22,
+  },
+  modalContainer: {
+    marginTop: 22,
   },
 });
